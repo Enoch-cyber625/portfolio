@@ -15,7 +15,7 @@ menuToggle.addEventListener("click", () => {
 });
 
 
-// Close mobile menu after clicking a link
+// Close menu after selecting a navigation link
 
 const navLinks = document.querySelectorAll(".navbar nav a");
 
@@ -34,75 +34,31 @@ navLinks.forEach(link => {
 
 
 // =========================
-// SCROLL REVEAL
+// INTERACTIVE SKILLS
 // =========================
 
-const revealElements = document.querySelectorAll(".reveal");
+const skillButtons = document.querySelectorAll(".skill-chip");
+const skillDetail = document.getElementById("skill-detail");
 
-const revealObserver = new IntersectionObserver((entries) => {
+skillButtons.forEach(button => {
 
-    entries.forEach(entry => {
+    button.addEventListener("click", () => {
 
-        if (entry.isIntersecting) {
+        // Remove selection from all buttons
 
-            entry.target.classList.add("show");
+        skillButtons.forEach(item => {
+            item.classList.remove("selected");
+        });
 
-            revealObserver.unobserve(entry.target);
+        // Select clicked button
 
-        }
+        button.classList.add("selected");
+
+        // Display its description
+
+        skillDetail.textContent = button.dataset.detail;
 
     });
-
-}, {
-    threshold: 0.15
-});
-
-
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-// =========================
-// ACTIVE NAVIGATION
-// =========================
-
-const sections = document.querySelectorAll("main section[id]");
-
-const sectionObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            const currentId = entry.target.getAttribute("id");
-
-            navLinks.forEach(link => {
-
-                link.classList.remove("active");
-
-                if (link.getAttribute("href") === `#${currentId}`) {
-
-                    link.classList.add("active");
-
-                }
-
-            });
-
-        }
-
-    });
-
-}, {
-    threshold: 0.35
-});
-
-
-sections.forEach(section => {
-
-    sectionObserver.observe(section);
 
 });
 
@@ -113,21 +69,14 @@ sections.forEach(section => {
 
 const backToTop = document.getElementById("back-to-top");
 
-
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 400) {
-
-        backToTop.classList.add("visible");
-
-    } else {
-
-        backToTop.classList.remove("visible");
-
-    }
+    backToTop.classList.toggle(
+        "visible",
+        window.scrollY > 400
+    );
 
 });
-
 
 backToTop.addEventListener("click", () => {
 
@@ -137,3 +86,76 @@ backToTop.addEventListener("click", () => {
     });
 
 });
+
+
+// =========================
+// SCROLL REVEAL
+// =========================
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.1
+    });
+
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
+
+}
+
+
+// =========================
+// ACTIVE NAVIGATION
+// =========================
+
+const sections = document.querySelectorAll("main section[id]");
+
+if ("IntersectionObserver" in window) {
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                const currentId = entry.target.id;
+
+                navLinks.forEach(link => {
+
+                    link.classList.toggle(
+                        "active",
+                        link.getAttribute("href") === `#${currentId}`
+                    );
+
+                });
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.35
+    });
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+}
