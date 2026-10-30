@@ -107,7 +107,7 @@ button {
 
 
 /* =========================
-   HERO
+   HERO SECTION
 ========================= */
 
 .hero {
@@ -394,16 +394,14 @@ button {
     font-size: 0.9rem;
 }
 
-.project-tags,
-.skill-tags {
+.project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 25px;
 }
 
-.project-tags span,
-.skill-tags span {
+.project-tags span {
     padding: 6px 12px;
     background: var(--surface);
     border: 1px solid var(--border);
@@ -435,24 +433,118 @@ button {
 
 
 /* =========================
-   SKILLS
+   SKILLS & INTERESTS
 ========================= */
 
-.skills-grid {
+.skills-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
 }
 
-.skill-group {
-    padding: 25px;
-    border: 1px solid var(--border);
+.skill-panel {
+    padding: 30px;
     background: var(--surface);
+    border: 1px solid var(--border);
+    transition: border-color 0.3s;
 }
 
-.skill-group h3 {
-    font-size: 1.1rem;
-    font-weight: normal;
+.skill-panel:hover {
+    border-color: var(--accent);
+}
+
+.skill-panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.skill-panel-heading span {
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+
+.skill-panel-heading h3 {
+    font-size: 1.3rem;
+}
+
+.skill-hint {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.interactive-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-chip {
+    padding: 11px 17px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.skill-chip span {
+    color: var(--accent);
+    margin-left: 8px;
+}
+
+.skill-chip:hover,
+.skill-chip.selected {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.skill-detail {
+    min-height: 90px;
+    margin-top: 25px;
+    padding: 18px;
+    background: var(--card);
+    border-left: 2px solid var(--accent);
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.interest-card {
+    padding: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    transition: 0.25s;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.interest-icon {
+    display: block;
+    color: var(--accent);
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+}
+
+.interest-card h4 {
+    font-size: 0.95rem;
+    margin-bottom: 7px;
+}
+
+.interest-card p {
+    color: var(--muted);
+    font-size: 0.78rem;
 }
 
 
@@ -625,18 +717,31 @@ button {
 
 
 /* =========================
-   JAVASCRIPT SCROLL REVEAL
+   SCROLL REVEAL
+   CONTENT VISIBLE BY DEFAULT
 ========================= */
 
 .reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    opacity: 1;
+    transform: none;
 }
 
 .reveal.show {
-    opacity: 1;
-    transform: translateY(0);
+    animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 
@@ -705,6 +810,10 @@ button {
         margin-top: 20px;
     }
 
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 
@@ -729,7 +838,6 @@ button {
 
     .education-grid,
     .project-grid,
-    .skills-grid,
     .achievement-grid {
         grid-template-columns: 1fr;
     }
@@ -742,6 +850,32 @@ button {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
 
 }
