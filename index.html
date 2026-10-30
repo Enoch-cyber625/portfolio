@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="The personal portfolio of Enoch George Johnson, a Computer Science and Engineering student interested in programming, mathematics and technology.">
+
     <title>Enoch George Johnson | Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
@@ -15,9 +17,13 @@
 
     <!-- NAVIGATION -->
     <header class="navbar">
-        <a href="#home" class="logo">enoch<span>.dev</span></a>
 
-        <button class="menu-toggle" id="menu-toggle"
+        <a href="#home" class="logo">
+            enoch<span>.dev</span>
+        </a>
+
+        <button class="menu-toggle"
+                id="menu-toggle"
                 aria-label="Toggle navigation"
                 aria-expanded="false">
             ☰
@@ -31,6 +37,7 @@
             <a href="#achievements">Achievements</a>
             <a href="#contact" class="nav-contact">Contact</a>
         </nav>
+
     </header>
 
 
@@ -59,6 +66,7 @@
                 </p>
 
                 <div class="hero-buttons">
+
                     <a href="#projects" class="button primary-button">
                         Explore my work
                     </a>
@@ -66,12 +74,16 @@
                     <a href="#contact" class="button secondary-button">
                         Get in touch
                     </a>
+
                 </div>
 
             </div>
 
+
             <div class="hero-visual reveal">
+
                 <div class="code-card">
+
                     <div class="code-header">
                         <span></span>
                         <span></span>
@@ -79,18 +91,32 @@
                     </div>
 
                     <div class="code-content">
+
                         <p><span class="code-purple">const</span> developer = {</p>
-                        <p class="indent">name: <span class="code-green">"Enoch"</span>,</p>
-                        <p class="indent">field: <span class="code-green">"Computer Science"</span>,</p>
+
+                        <p class="indent">
+                            name: <span class="code-green">"Enoch"</span>,
+                        </p>
+
+                        <p class="indent">
+                            field: <span class="code-green">"Computer Science"</span>,
+                        </p>
+
                         <p class="indent">interests: [</p>
+
                         <p class="indent-2">"Programming",</p>
                         <p class="indent-2">"Mathematics",</p>
                         <p class="indent-2">"AI",</p>
                         <p class="indent-2">"Chess"</p>
+
                         <p class="indent">]</p>
+
                         <p>};</p>
+
                     </div>
+
                 </div>
+
             </div>
 
         </section>
@@ -100,9 +126,13 @@
         <section class="section about-section" id="about">
 
             <div class="section-heading reveal">
+
                 <p class="eyebrow">A LITTLE ABOUT ME</p>
+
                 <h2>Who I am</h2>
+
             </div>
+
 
             <div class="about-content reveal">
 
@@ -133,9 +163,13 @@
         <section class="section education-section" id="education">
 
             <div class="section-heading reveal">
+
                 <p class="eyebrow">MY ACADEMIC JOURNEY</p>
+
                 <h2>Education</h2>
+
             </div>
+
 
             <div class="education-grid">
 
@@ -194,24 +228,30 @@
         <section class="section projects-section" id="projects">
 
             <div class="section-heading reveal">
+
                 <p class="eyebrow">THINGS I'VE BUILT</p>
+
                 <h2>Projects</h2>
 
                 <p class="section-description">
                     A collection of projects, experiments and programming
                     exercises that reflect my learning journey.
                 </p>
+
             </div>
 
 
             <div class="project-grid">
 
-                <!-- MAIN PROJECT -->
+                <!-- LETRDLE -->
                 <article class="project-card featured-project reveal">
 
                     <div class="project-top">
+
                         <span class="project-number">01</span>
+
                         <span class="project-type">PYTHON · CLI</span>
+
                     </div>
 
                     <h3>LETRDLE</h3>
@@ -239,8 +279,11 @@
                 <article class="project-card reveal">
 
                     <div class="project-top">
+
                         <span class="project-number">02</span>
+
                         <span class="project-type">PYTHON · EXPERIMENTS</span>
+
                     </div>
 
                     <h3>CLI Mini Projects</h3>
@@ -274,59 +317,144 @@
         </section>
 
 
-        <!-- SKILLS SECTION -->
+        <!-- SKILLS AND INTERESTS -->
         <section class="section skills-section" id="skills">
 
             <div class="section-heading reveal">
-                <p class="eyebrow">WHAT I'M EXPLORING</p>
+
+                <p class="eyebrow">WHAT MAKES ME CURIOUS</p>
+
                 <h2>Skills & Interests</h2>
+
+                <p class="section-description">
+                    A look at the technologies I work with and the areas
+                    I'm interested in exploring.
+                </p>
+
             </div>
 
 
-            <div class="skills-grid reveal">
+            <div class="skills-container">
 
-                <div class="skill-group">
-                    <h3>Programming</h3>
+                <!-- TECHNOLOGIES -->
+                <div class="skill-panel reveal">
 
-                    <div class="skill-tags">
-                        <span>Python</span>
-                        <span>Java</span>
-                        <span>C</span>
+                    <div class="skill-panel-heading">
+
+                        <span>01</span>
+
+                        <h3>Technologies</h3>
+
                     </div>
+
+                    <p class="skill-hint">
+                        Select a technology to learn more.
+                    </p>
+
+
+                    <div class="interactive-skills">
+
+                        <button class="skill-chip"
+                                data-detail="Python is my primary programming language. I've used it to build games, solve problems and experiment with different ideas.">
+                            Python <span>↗</span>
+                        </button>
+
+                        <button class="skill-chip"
+                                data-detail="HTML provides the structure of my web projects. I'm using it to build this portfolio.">
+                            HTML <span>↗</span>
+                        </button>
+
+                        <button class="skill-chip"
+                                data-detail="CSS helps me design and style web pages, from layouts to responsive interfaces.">
+                            CSS <span>↗</span>
+                        </button>
+
+                        <button class="skill-chip"
+                                data-detail="I'm currently exploring JavaScript to make my web projects more interactive.">
+                            JavaScript <span>↗</span>
+                        </button>
+
+                    </div>
+
+
+                    <div class="skill-detail"
+                         id="skill-detail"
+                         aria-live="polite">
+
+                        Select a technology to see its description.
+
+                    </div>
+
                 </div>
 
 
-                <div class="skill-group">
-                    <h3>Web Development</h3>
+                <!-- INTERESTS -->
+                <div class="skill-panel reveal">
 
-                    <div class="skill-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
+                    <div class="skill-panel-heading">
+
+                        <span>02</span>
+
+                        <h3>Areas of Interest</h3>
+
                     </div>
-                </div>
 
 
-                <div class="skill-group">
-                    <h3>Areas of Interest</h3>
+                    <div class="interest-grid">
 
-                    <div class="skill-tags">
-                        <span>Artificial Intelligence</span>
-                        <span>Problem Solving</span>
-                        <span>Mathematics</span>
-                        <span>Software Development</span>
+                        <div class="interest-card">
+
+                            <span class="interest-icon">⌘</span>
+
+                            <h4>Computer Science</h4>
+
+                            <p>
+                                Understanding how things work.
+                            </p>
+
+                        </div>
+
+
+                        <div class="interest-card">
+
+                            <span class="interest-icon">∑</span>
+
+                            <h4>Mathematics</h4>
+
+                            <p>
+                                Logic, patterns and problem-solving.
+                            </p>
+
+                        </div>
+
+
+                        <div class="interest-card">
+
+                            <span class="interest-icon">✦</span>
+
+                            <h4>Artificial Intelligence</h4>
+
+                            <p>
+                                Exploring intelligent systems.
+                            </p>
+
+                        </div>
+
+
+                        <div class="interest-card">
+
+                            <span class="interest-icon">♟</span>
+
+                            <h4>Chess</h4>
+
+                            <p>
+                                Strategy, patience and calculation.
+                            </p>
+
+                        </div>
+
                     </div>
-                </div>
 
-
-                <div class="skill-group">
-                    <h3>Beyond Technology</h3>
-
-                    <div class="skill-tags">
-                        <span>Chess</span>
-                        <span>Creative Thinking</span>
-                        <span>Learning</span>
-                    </div>
                 </div>
 
             </div>
@@ -334,16 +462,19 @@
         </section>
 
 
-        <!-- ACHIEVEMENTS SECTION -->
+        <!-- ACHIEVEMENTS -->
         <section class="section achievements-section" id="achievements">
 
             <div class="section-heading reveal">
+
                 <p class="eyebrow">MILESTONES</p>
+
                 <h2>Achievements & Recognition</h2>
 
                 <p class="section-description">
                     A few recognitions from my academic journey.
                 </p>
+
             </div>
 
 
@@ -353,10 +484,14 @@
                 <article class="achievement-item reveal">
 
                     <div class="achievement-image">
-                        <img src="images/olympiad.jpg">
+
+                        <img src="images/olympiad.jpg"
+                             alt="Olympiad achievement certificate">
+
                     </div>
 
                     <div class="achievement-info">
+
                         <p class="card-label">EARLY ACHIEVEMENT</p>
 
                         <h3>Olympiad Recognition</h3>
@@ -365,6 +500,7 @@
                             Recognition from an academic Olympiad
                             during Grade 2.
                         </span>
+
                     </div>
 
                 </article>
@@ -374,6 +510,7 @@
                 <article class="achievement-item reveal">
 
                     <div class="achievement-info">
+
                         <p class="card-label">STATE-LEVEL RECOGNITION</p>
 
                         <h3>Merit Awards</h3>
@@ -381,10 +518,15 @@
                         <span>
                             Recognition for academic achievement.
                         </span>
+
                     </div>
 
+
                     <div class="achievement-image sunday-collage">
-                        <img src="images/sunday-school.jpg">
+
+                        <img src="images/sunday-school-collage.jpg"
+                             alt="Collage of state-level merit awards">
+
                     </div>
 
                 </article>
@@ -394,7 +536,7 @@
         </section>
 
 
-        <!-- CONTACT SECTION -->
+        <!-- CONTACT -->
         <section class="section contact-section" id="contact">
 
             <div class="contact-content reveal">
@@ -414,15 +556,18 @@
                     Get in touch ↗
                 </a>
 
+
                 <div class="social-links">
 
                     <a href="https://github.com/YOUR_USERNAME"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank"
+                       rel="noopener noreferrer">
                         GitHub
                     </a>
 
                     <a href="https://www.linkedin.com/in/YOUR_USERNAME/"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank"
+                       rel="noopener noreferrer">
                         LinkedIn
                     </a>
 
@@ -450,9 +595,13 @@
 
 
     <!-- BACK TO TOP BUTTON -->
-    <button id="back-to-top" aria-label="Back to top">
+    <button id="back-to-top"
+            aria-label="Back to top">
+
         ↑
+
     </button>
+
 
 </body>
 </html>
